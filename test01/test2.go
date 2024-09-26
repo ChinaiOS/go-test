@@ -1,5 +1,9 @@
 package main
 
+/**
+变量与常量声明
+*/
+
 var (
 	a1 = 123
 	a2 = "hello"
@@ -21,6 +25,6 @@ func test2() {
 	println(b)
 	println(c)
 
-	println("%s", a2)
+	println("test2：", a2)
 
 }

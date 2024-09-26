@@ -1,14 +1,13 @@
 package main
 
-import "go-test/test"
-
 func main() {
 
-	test1()
+	//test1()
 
-	test2()
+	//test2()
 
-	println(test.Ds)
+	test3()
+
 }
 
 /*
