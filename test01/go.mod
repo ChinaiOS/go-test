@@ -1,3 +1,3 @@
-module github.com/yourusername/go-test
+module go-test
 
 go 1.23.1
