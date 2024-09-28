@@ -28,12 +28,15 @@ func test3() {
 	//
 	//test341()
 
-	test351 := test35(1, 2)
+	//test351 := test35(1, 2)
 
 	//test351()
 
-	fmt.Printf("%s\n", test351())
+	//fmt.Printf("%s\n", test351())
 
+	//DeferClosureLoopV1()
+	//DeferClosureLoopV2()
+	DeferClosureLoopV3()
 }
 
 func test33(a int, b int) (int, int) {
@@ -61,5 +64,32 @@ func test34() func() {
 func test35(a int, b int) func() string {
 	return func() string {
 		return fmt.Sprintf("%d %d", a, b)
+	}
+}
+
+func DeferClosureLoopV1() {
+	for i := 0; i < 10; i++ {
+		fmt.Printf("%d\n", i)
+		defer func() {
+			println(i)
+		}()
+	}
+}
+
+func DeferClosureLoopV2() {
+	for i := 0; i < 10; i++ {
+		//fmt.Printf("%d\n", i)
+		defer func(val int) {
+			fmt.Printf("%d\n", val)
+		}(i)
+	}
+}
+
+func DeferClosureLoopV3() {
+	for i := 0; i < 10; i++ {
+		j := i
+		defer func(val int) {
+			fmt.Printf("%d\n", val)
+		}(j)
 	}
 }
